@@ -2,13 +2,13 @@
   "name": "react-observatory-scripts",
   "version": "1.0.0",
   "description": "Configuration and scripts for Create React App.",
-  "repository": "facebookincubator/create-react-app",
+  "repository": "halfzebra/react-observatory-scripts",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/facebookincubator/create-react-app/issues"
+    "url": "https://github.com/halfzebra/react-observatory-scripts/issues"
   },
   "files": [
     "bin",
