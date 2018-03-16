@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './vendor';
+import configureStore from './configureStore';
 import registerServiceWorker from './registerServiceWorker';
+import './index.css';
+import HomePage from './containers/Home';
+import About from './containers/About/Loadable';
+import Blog from './containers/Blog/Loadable';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class AppRoot extends Component {
+  render() {
+    return (
+      <Provider store={configureStore()}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/about" component={About} />
+            <Route path="/blog" component={Blog} />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
+    );
+  }
+}
+
+ReactDOM.render(<AppRoot />, document.getElementById('root'));
+
 registerServiceWorker();
